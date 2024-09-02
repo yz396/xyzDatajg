@@ -1,6 +1,6 @@
+import jdk.management.resource.ResourceType;
 import org.junit.Test;
 
-import java.security.PublicKey;
 
 public class testDA {
 
@@ -65,5 +65,17 @@ public class testDA {
             System.out.println(element);
         }
 
+    }
+
+    //测试是否扩容成功
+    @Test
+    public void test5(){
+        DynamicArray dy = new DynamicArray();
+        for(int i = 1; i<10086; i++){
+            dy.addLast(i);
+        }
+        for(Integer element : dy){
+            System.out.println(element);
+        }
     }
 }
