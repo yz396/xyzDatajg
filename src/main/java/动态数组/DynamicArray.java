@@ -1,3 +1,5 @@
+package 动态数组;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;

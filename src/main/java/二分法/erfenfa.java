@@ -1,3 +1,5 @@
+package 二分法;
+
 public class erfenfa {
 
     //找到返回下标，没找到返回-1

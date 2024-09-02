@@ -1,4 +1,5 @@
-import jdk.management.resource.ResourceType;
+package 动态数组;
+
 import org.junit.Test;
 
 
