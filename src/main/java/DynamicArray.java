@@ -22,7 +22,7 @@ public class DynamicArray implements Iterable<Integer>{
     //向数组中某一个位置加入数据
     public void add(int index, int element) {
 
-        //扩容检查
+        checkAndGrow();
 
 
         if(index >= 0 && index < size){
@@ -34,6 +34,17 @@ public class DynamicArray implements Iterable<Integer>{
             size++;
         }else {
             System.out.println("输入索引有误");
+        }
+    }
+
+    private void checkAndGrow() {
+        //扩容检查
+        if(size == capacity){
+            //进行扩容
+            capacity += capacity >> 1;
+            int[] newArray = new int[capacity];
+            System.arraycopy(array, 0, newArray,0,size);
+            array = newArray;
         }
     }
 
