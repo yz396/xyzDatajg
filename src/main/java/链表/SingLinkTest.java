@@ -42,4 +42,18 @@ public class SingLinkTest {
 
         list.loop2(System.out::println);
     }
+
+    //测试索引是否正常
+    @Test
+    public void test4() {
+        SinglyLinkedList list = new SinglyLinkedList();
+        list.addLast(1);
+        list.addLast(2);
+        list.addLast(3);
+        list.addLast(4);
+
+       // list.test();
+        int i = list.get(3);
+        System.out.println(i);
+    }
 }

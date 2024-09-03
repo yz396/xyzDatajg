@@ -86,5 +86,45 @@ public class SinglyLinkedList implements Iterable<Integer>{
         }
     }
 
+    /* 根据索引查找元素，由于链表不像数组，所以链表没有索引。
+    *写一个方法给链表拟添加索引
+    */
+    /*public void test() {
+        int i = 0;
+        for (Node p = head; p != null; p = p.next,i++){
+            System.out.println(p.value + "索引是：" + i);
+        }
+    }*/
+    //找节点，没有找到就返回null
+    private Node findNode(int index) {  //该方法与get联系起来，因此设置为private
+        int i = 0;
+        for(Node p = head; p != null; p = p.next,i++){
+            if(i == index){
+                return p;
+            }
+        }
+        return null; //没有找到节点
+    }
+    //返回节点值
+    public int get(int index) {
+        Node node = findNode(index);
+        if(node == null){
+            throw new IllegalArgumentException(
+                    String.format("index [%d] 不合法%n", index)
+            );
+        }
+        return node.value;
+    }
+
+    /* 向链表任意索引位置添加节点（索引合法）
+     *关键找到插入节点的上一个节点
+     *
+     */
+    public void insert(int index, int value){
+        Node prev = findNode(index - 1);
+        if (prev != null) {
+            prev.next = new Node(value, prev.next);
+        }
+    }
 
 }
