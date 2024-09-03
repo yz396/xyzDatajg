@@ -118,7 +118,6 @@ public class SinglyLinkedList implements Iterable<Integer>{
 
     /* 向链表任意索引位置添加节点（索引合法）
      *关键找到插入节点的上一个节点
-     *
      */
     public void insert(int index, int value){
         Node prev = findNode(index - 1);
